@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COVID19 New Cases, New Death and Vaccine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2d80b7d1c9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="covidData.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+  <body style="font-family: sans-serif;">
+    <div class="container-fluid" style="width: 900px;" align="center">
+      <div class="row">
+        <div class="col-sm">
+            <h1 style="cursor:pointer" onclick="backMonth()"><i class="fas fa-angle-double-left"></i></h1>
+        </div>
+        <div class="col-sm">
+            <h1 id="month"></h1>
+            <script>
+              document.getElementById("month").innerHTML = m;
+            </script>
+        </div>
+        <div class="col-sm">
+            <h1 style="cursor:pointer" onclick="nextMonth()"><i class="fas fa-angle-double-right"></i></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <h4 id="title"></h4>
+          <script>
+            document.getElementById("title").innerHTML = title;
+          </script>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div id="visualization" style="width: 900px; height: 350px;"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2" style="width: 100px;">
+          <label for="exampleFormControlSelect1">Options</label>
+          <select id="covidOptions" class="form-control" id="exampleFormControlSelect1" onchange="selectOption(this.value)">
+            <option>Cases</option>
+            <option>Deaths</option>
+            <option>Vaccines</option>
+          </select>
+          <script>
+            document.getElementById("covidOptions").value = id;
+          </script>
+        </div>
+        <div class="col-sm-10">
+          <small>Data:</small><br/>
+          <small>https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36</small><br/>
+          <small>https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-Trends-in-the-United-States-N/rh2h-3yt2</small>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
