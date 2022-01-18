@@ -40,8 +40,8 @@ cur.execute('''CREATE TABLE IF NOT EXISTS vaccine_stats
 #Get Data
 #App Token not include. If you wish try with the Token go to https://data.cdc.gov/login
 statesurl = "https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json"
-covidurl = "https://data.cdc.gov/resource/9mfq-cb36.json?$limit=50000&$$app_token=9QMPkt0f57Y2RmY9fe6PmNH5v"
-vaccineurl = "https://data.cdc.gov/resource/rh2h-3yt2.json?date_type=Admin&$limit=50000&$$app_token=9QMPkt0f57Y2RmY9fe6PmNH5v"
+covidurl = "https://data.cdc.gov/resource/9mfq-cb36.json"
+vaccineurl = "https://data.cdc.gov/resource/rh2h-3yt2.json"
 
 print('Retrieving...')
 uh_state = urllib.request.urlopen(statesurl, context=ctx)
